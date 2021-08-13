@@ -7,6 +7,10 @@ export class OrderService {
    
     constructor(private cartService: ShoppingCartService) {}
     
+    itemsValue(): number {
+     return this.cartService.total()
+    }
+
     cartItems(): CartItem[] {
         return this.cartService.items
     }
@@ -22,6 +26,4 @@ export class OrderService {
     remove(item: CartItem) {
         this.cartService.removeItem(item)
     }
-
-
 }
