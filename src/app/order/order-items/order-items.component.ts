@@ -7,7 +7,7 @@ import { CartItem } from './../../restaurant-detail/shopping-cart/cart-item.mode
 })
 export class OrderItemsComponent implements OnInit {
 
-  @Input()
+  @Input() 
   items: CartItem[];
 
   @Output()
