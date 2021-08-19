@@ -21,10 +21,7 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantService } from './restaurants/restaurants.service';
-import { InputComponent } from './shared/input/input.component';
-import { RadioComponent } from './shared/radio/radio.component';
-import { RatingComponent } from './shared/rating/rating.component';
-
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -39,18 +36,14 @@ import { RatingComponent } from './shared/rating/rating.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent,
-    RadioComponent,
     OrderItemsComponent,
     DeliveryCostsComponent,
-    OrderSummaryComponent,
-    RatingComponent
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpModule,
+    SharedModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
