@@ -34,8 +34,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     HttpModule,
-    SharedModule,
-    CoreModule,
+    SharedModule.forRoot(),
     RouterModule.forRoot(ROUTES)
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
