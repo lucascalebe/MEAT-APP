@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RestaurantService } from './restaurants.service';
 import { Component, OnInit } from '@angular/core';
@@ -6,8 +7,11 @@ import { animate, state, style, transition, trigger,keyframes } from '@angular/a
 
 import 'rxjs/add/operator/switchMap'
 import 'rxjs/add/operator/do'
+import 'rxjs/add/operator/catch'
+import 'rxjs/add/observable/from'
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+
 @Component({
   selector: 'mt-restaurants',
   templateUrl: './restaurants.component.html',
@@ -50,8 +54,9 @@ export class RestaurantsComponent implements OnInit {
     .debounceTime(500)
     .distinctUntilChanged()
     .switchMap(searchTerm => 
-      this.restaurantService.restaurants(searchTerm))
-      .subscribe(restaurants => this.restaurants = restaurants)
+      this.restaurantService.restaurants(searchTerm)
+        .catch(error => Observable.from([])))
+        .subscribe(restaurants => this.restaurants = restaurants)
 
     this.restaurantService.restaurants()
     .subscribe(restaurants => this.restaurants = restaurants)
