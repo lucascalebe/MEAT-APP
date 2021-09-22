@@ -1,4 +1,5 @@
 import { handleAuthentication } from './auth';
+import { handleAuthorization } from './authz';
 import * as jsonServer from 'json-server'
 import { Express } from 'express'
 
@@ -15,6 +16,7 @@ server.use(middlewares)
 server.use(jsonServer.bodyParser)
 
 server.post('/login',handleAuthentication)
+server.use('/orders',handleAuthorization)
 // Use default router
 server.use(router)
 
