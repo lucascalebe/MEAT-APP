@@ -1,4 +1,3 @@
-import { User } from './../../../../backend/users';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from './login.service';

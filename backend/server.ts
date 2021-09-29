@@ -6,7 +6,7 @@ import { Express } from 'express'
 import * as fs from 'fs';
 import * as https from 'https';
 
-const server: Express = jsonServer.create()
+const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 

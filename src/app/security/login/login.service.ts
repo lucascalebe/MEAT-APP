@@ -1,9 +1,9 @@
-import { User } from './../../../../backend/users';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { MEAT_API } from 'app/app.api';
 import 'rxjs/add/operator/do'
+import { User } from './user.model';
 
 @Injectable()
 export class LoginService {
