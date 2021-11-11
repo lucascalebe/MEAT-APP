@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit {
     {label: 'Dinheiro',value: 'MON'},
     {label: 'Cartão de Débito',value: 'DEB'},
     {label: 'Cartão Refeição',value: 'REF'},
-    
+
   ]
 
   constructor(
@@ -65,12 +65,12 @@ export class OrderComponent implements OnInit {
   cartItems(): CartItem[] {
     return this.orderService.cartItems()
   }
-  
-  
+
+
     increaseQty(item: CartItem) {
       this.orderService.increaseQty(item);
     }
-  
+
     decreaseQty(item: CartItem) {
       this.orderService.decreaseQty(item);
     }

@@ -4,6 +4,11 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false,
-  api: 'https://localhost:3001'
+  production: true,
+  api: 'http://localhost:3000'
 };
+
+
+// json-server db.json
+
+// nodemon --watch backend backend/dist/server.js
